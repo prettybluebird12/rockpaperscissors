@@ -13,20 +13,44 @@ $("#shoot").click(function(){
   $("#userchoice").text(message);
   
     userChoice = $("#input").val();
-  $("#userchoice").text(userChoice);
+  $("#userChoice").text(userChoice);
+  
+  
   if(randomNumber > 0 && randomNumber<.40){
-   $("#computerchoice").text("rock"); 
+   $("#computerChoice").text("rock"); 
   }
   else if(randomNumber > .40 && randomNumber < .60){
-    $("#computerchoice").text("paper");
+    $("#computerChoice").text("paper");
   }
   else if(randomNumber> .60 && randomNumber< .99){
-    $("#computerchoice").text("scissors");
+    $("#computerChoice").text("scissors");
   }
 
+if(userChoice === computerChoice){
+$("#result").text("Tie!");}
+else if(userChoice === "paper" && computerChoice === "rock"){
+$("#result").text("User Wins!");}
+
+else if(userChoice === "rock" && computerChoice === "scissors"){
+  $("#result").text("User Wins");}
+  
+else if(userChoice === "scissors" && computerChoice === "paper"){
+  $("#result").text("User Wins");}
+
+else if(userChoice === "paper" && computerChoice === "scissors"){
+  $("#result").text("Computer Wins");}
+  
+else if(userChoice === "rock" && computerChoice === "paper"){
+  $("#result").text("Computer Wins");}
+
+else if(userChoice === "rock" && computerChoice === "scissors"){
+  $("#result").text("User Wins");}
+
+$("#input").val("");
+$("#computerChoice").val("");
 });
 
 var userChoice = "";
 var computerChoice= "";
 var winner = "";
-var randomNumber = math.Random;
+var randomNumber =Math.random();
